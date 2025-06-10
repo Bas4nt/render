@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sticker-kang-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        fromGroup: telegram-bot-secrets
+      - key: ADMIN_IDS
+        value: "123456789"  # Your Telegram ID
+      - key: PORT
+        value: 8443
